@@ -1,8 +1,9 @@
-name: Conditions workflow
+name: Naming
 on: push
 jobs:
-  skip-or-run:
-    if: ${{ github.actor == 'shio' }}
+  print:
+    name: Super Useful job
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello"
+      - name: Amazing Script
+        run: echo "Hello"
