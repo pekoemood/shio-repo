@@ -4,8 +4,8 @@ jobs:
   print:
     runs-on: ubuntu-latest
     env:
-      SECRET: ${{ secret.PASSWORD }}
-      MYFRIND: ${{ var.MYFRIND }}
+      SECRET: ${{ secrets.PASSWORD }}
+      MYFRIND: ${{ vars.MYFRIND }}
     steps:
       - run: echo ${MYFRIND}
       - run: echo ${SECRET}
