@@ -1,9 +1,8 @@
-name: Failed
+name: Conditions workflow
 on: push
 jobs:
-  failed:
+  skip-or-run:
+    if: ${{ github.actor == 'shio' }}
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1
       - run: echo "Hello"
-        if: ${{ failure() }}
