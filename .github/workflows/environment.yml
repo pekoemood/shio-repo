@@ -1,9 +1,12 @@
-name: Variables
+name: Secret
 on: push
 jobs:
   print:
     runs-on: ubuntu-latest
     env:
-      USERNAME: ${{ vars.USERNAME }}
+      SECRET: ${{ secret.PASSWORD }}
+      MYFRIND: ${{ var.MYFRIND }}
     steps:
-      - run: echo "${USERNAME}"
+      - run: echo ${MYFRIND}
+      - run: echo ${SECRET}
+      - run: echo ${PASSWORD:0:1} ${PASSWORD#?}
