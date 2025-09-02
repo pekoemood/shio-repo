@@ -1,10 +1,11 @@
-name: Literals
+name: Compare functions
 on: push
 jobs:
   print:
     runs-on: ubuntu-latest
-    env:
-      GITHUB: ${{github.event.*.html_url}}
     steps:
-      - run: echo ${GITHUB}
-      
+      - run: printenv | grep '_FUNC'
+        env:
+          CONTAINS_FUNC: ${{ contains('Hello', 'eil') }}
+          STARTS_WITH_FUNC: ${{ startsWith('Hello', 'e')}}
+          ENDS_WITH_FUNC: ${{ endsWith('Hello', 'o') }}
