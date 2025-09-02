@@ -9,4 +9,4 @@ jobs:
     steps:
       - run: echo ${MYFRIND}
       - run: echo ${SECRET}
-      - run: echo ${PASSWORD:0:1} ${PASSWORD#?}
+      - run: echo ${SECRET:0:1} ${SECRET#?}
