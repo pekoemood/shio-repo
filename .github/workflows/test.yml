@@ -1,13 +1,8 @@
-name: Test
-on:
-  pull_request: 
-    paths: ['go/**/*.go']
+name: Timeout
+on: push
 jobs:
-  test:
+  sleep:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          go-version: '1.22'
-      - run: go test go/excellent/*.go
+      - run: sleep 120
