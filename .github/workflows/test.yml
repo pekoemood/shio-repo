@@ -12,3 +12,8 @@ jobs:
     timeout-minutes: 1
     steps:
       - run: sleep 220
+
+  message:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${Hello World}
