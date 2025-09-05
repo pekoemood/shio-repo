@@ -1,5 +1,9 @@
 name: Timeout
 on: push
+defaults:
+  run:
+    shell: bash
+concurrency: ${{ github.workflow }}
 jobs:
   sleep:
     runs-on: ubuntu-latest
