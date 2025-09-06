@@ -1,19 +1,7 @@
-name: Timeout
+name: Debug log
 on: push
-defaults:
-  run:
-    shell: bash
-concurrency: 
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 jobs:
-  sleep:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-    steps:
-      - run: sleep 220
-
-  message:
+  log:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${Hello World}
+      - run: echo "::debug::This is a debug log"
