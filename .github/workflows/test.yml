@@ -1,5 +1,8 @@
 name: Bash tracing
 on: push
+defaults:
+  run:
+    shell: bash
 jobs:
   log:
     runs-on: ubuntu-latest
