@@ -23,6 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [after]
     steps:
-      -  env:
+      - env:
           KEY: ${{ needs.after.outputs.key }}
         run: echo "${KEY}"
